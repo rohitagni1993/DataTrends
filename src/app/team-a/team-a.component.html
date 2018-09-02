@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col col-xs-12">
+  	<br>
+	  <h2>Welcome Team A</h2>
+	  <br>
+	  <div class="dropdown">
+	    <button type="button" class="btn btn-outline-danger dropdown-toggle" data-toggle="dropdown">
+	      {{ selectDefault }}
+	    </button>
+	    <div class="dropdown-menu">
+	      <a class="dropdown-item" *ngFor="let item of selectItems" (click)="doSomething(item)">{{ item.name }}</a>
+	    </div>
+	  </div>
+
+    <div>
+    	<canvas baseChart
+            [datasets]="chartData"
+            [labels]="chartLabels"
+            [options]="chartOptions"
+            [legend]="chartLegend"
+            [chartType]="chartType" 
+            (chartClick)="chartClicked($event)">
+        </canvas>
+  	</div>
+  	<br>
+	<div class="d-flex justify-content-center">
+		<button class="btn btn-danger" (click)="changeShape()">
+	  		Change to {{ shape }}
+	  	</button>
+	</div>  	
+    <br><br>
+    <button class="btn btn-outline-danger" routerLink="/">
+		Back to Home
+	</button>
+    <hr>
+  </div>
+</div>
